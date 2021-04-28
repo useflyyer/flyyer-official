@@ -2,7 +2,6 @@ import React from 'react';
 import {Variable as V, Validator, Static} from '@flayyer/variables';
 import {TemplateProps} from '@flayyer/flayyer-types';
 import inRange from 'lodash/inRange';
-import sample from 'lodash/sample';
 
 import '../styles/tailwind.css';
 
@@ -42,7 +41,7 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
 
   const {title, image: selectedImage} = variables;
   const image: string =
-    selectedImage || sample(schema.properties.image.examples);
+    selectedImage || SAMPLE(schema.properties.image.examples)
 
   const date = new Date();
   const formatter = new Intl.DateTimeFormat(locale, {
@@ -104,4 +103,9 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
       </Layer>
     </Layer>
   );
+}
+
+function SAMPLE<T>(array: T[]): T {
+  const index = new Date().getDate() % array.length
+  return array[index]
 }
