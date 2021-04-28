@@ -99,8 +99,8 @@ module.exports = {
   },
   plugins: [
     /* Some useful plugins: */
-    // require('@tailwindcss/line-clamp'),
-    // require('@tailwindcss/aspect-ratio'),
-    // require('tailwindcss-textshadow'),
+    require('@tailwindcss/line-clamp'),
+    // Require('@tailwindcss/aspect-ratio'),
+    require('tailwindcss-textshadow')
   ]
 };

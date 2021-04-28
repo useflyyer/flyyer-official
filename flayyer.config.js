@@ -6,9 +6,14 @@ require('dotenv').config();
 module.exports = config({
   engine: 'react-typescript',
   key: process.env.FLAYYER_KEY,
-  deck: 'flayyer-official',
+  deck: 'official',
 
   // Optionals
-  name: 'Flayyer-Official',
-  description: 'Created with create-flayyer-app'
+  name: 'Flayyer Official',
+  description: 'Created with create-flayyer-app',
+  homepage: 'https://flayyer.com',
+  keywords: ['flayyer', 'react', 'tailwind'],
+  marketplace: true,
+  repository: 'https:/github.com/flayyer/flayyer-official',
+  sizes: ['THUMBNAIL', 'BANNER', 'SQUARE', 'STORY']
 });
