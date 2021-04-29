@@ -894,10 +894,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flayyer/cli@^1.17.1":
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.1.tgz#7879f9512996b53e5ea0ec21df8e36568fc83b4a"
-  integrity sha512-dKFZcQvFDUw8OOqvObIU4LLK02zKziKJF9fcfyiy4xlujDx5+NGcTpvKyL/xkscUAn17gv7jsXnopytP71vaBA==
+"@flayyer/cli@^1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.2.tgz#7db6f91e65c0677cea090b9517b34d7816ab83ad"
+  integrity sha512-bI7Hhv690orP3z69dfDMBNMwgsRTRcwYaGHecJByYoRn/tbA0cjUgsZmuDi369r27/4o/OVdAknTA6iazm6yqw==
   dependencies:
     "@flayyer/flayyer" "^2.3.1"
     "@flayyer/flayyer-types" "^1.11.0"
@@ -940,10 +940,10 @@
   resolved "https://registry.yarnpkg.com/@flayyer/goerr/-/goerr-1.2.0.tgz#ac49ccde7ef9cf15b083a3b8a9dfcc2b98036c35"
   integrity sha512-CvCxjtJiPyPLudiN8l1ax4lNJNhZmJ04XI0RidNCOMaT2e8zHp54KXYlOyAb0gbl80TTKhfhrTicgJeXm1tjsg==
 
-"@flayyer/variables@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@flayyer/variables/-/variables-1.2.0.tgz#395ade28d42bebc275dc28e54d2a5b956e60d31a"
-  integrity sha512-8CvPPPbgZ76LQPw8ENLRdL3+fOzHSzPYSacDMCbKIfXicspKAgw268/fMIaQmoUI2RBCuA5VkE8ezTkBYeu6Qg==
+"@flayyer/variables@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@flayyer/variables/-/variables-1.2.1.tgz#50aff0aa3833cc77121f16f9f2e7ed860a792a6f"
+  integrity sha512-2iO6MeFQdbdWFNuAPRwPXLa/cMWF5hmv6iHfvVVPjqqn+G4MMUA9kexABqt68smSJUptj+kswployj/NzY3O7g==
   dependencies:
     "@sinclair/typebox" "^0.16.5"
     ajv "^8.2.0"
