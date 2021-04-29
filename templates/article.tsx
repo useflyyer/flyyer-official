@@ -24,11 +24,12 @@ export const schema = V.Object({
   image: V.Optional(
     V.Image({
       title: 'Background image URL',
+      default: img5,
       examples: [img5, img4, img3, img2, img1]
     })
   ),
   date: V.Optional(
-    V.Date({
+    V.DateTime({
       description: 'Publication date',
       examples: [new Date().toISOString()]
     })
@@ -44,6 +45,8 @@ const validator = new Validator(schema);
 // Make sure to 'export default' a React component
 export default function MainTemplate(props: TemplateProps<Variables>) {
   const {width, height, variables, locale = 'en'} = props;
+  console.log(validator.parse(variables).errors);
+  
   if (!validator.validate(variables)) {
     return <img className="w-full h-full object-cover" src={img1} />; // Fallback for invalid variables
   }
