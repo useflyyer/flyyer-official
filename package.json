@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@flayyer/flayyer-types": "^1.11.0",
-    "@flayyer/variables": "^1.1.2",
+    "@flayyer/variables": "^1.2.0",
     "clsx": "^1.1.1",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
@@ -45,6 +45,7 @@
       "react/prop-types": "off",
       "react/function-component-definition": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off"
     }
   }

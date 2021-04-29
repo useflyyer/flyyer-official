@@ -26,6 +26,15 @@ export const schema = V.Object({
       title: 'Background image URL',
       examples: [img5, img4, img3, img2, img1]
     })
+  ),
+  date: V.Optional(
+    V.Date({
+      description: 'Publication date',
+      examples: [new Date().toISOString()]
+    })
+  ),
+  authorName: V.Optional(
+    V.String({title: 'Author name', examples: ['Patricio Lopez J.']})
   )
 });
 type Variables = Static<typeof schema>;
@@ -39,17 +48,16 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
     return <img className="w-full h-full object-cover" src={img1} />; // Fallback for invalid variables
   }
 
-  const {title, image: selectedImage} = variables;
+  const {title, image: selectedImage, date: dateRaw, authorName} = variables;
   const image: string =
-    selectedImage || SAMPLE(schema.properties.image.examples)
+    selectedImage || SAMPLE(schema.properties.image.examples);
 
-  const date = new Date();
+  const date = dateRaw && new Date(dateRaw);
   const formatter = new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
-  const author = 'Patricio Lopez';
 
   return (
     <Layer className="relative w-full h-full antialiased overflow-hidden">
@@ -65,12 +73,11 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
           'banner:flex flex-col items-center justify-center p-8 flex-nowrap text-center'
         ])}
       >
-        <time
-          dateTime={date.toISOString()}
-          className="flex-none text-sm text-gray-100 font-semibold tracking-wide uppercase text-shadow-md"
-        >
-          {formatter.format(date)}
-        </time>
+        {date && (
+          <time className="flex-none text-sm text-gray-100 font-semibold tracking-wide uppercase text-shadow-md">
+            {formatter.format(date)}
+          </time>
+        )}
 
         {title && (
           <h1
@@ -95,9 +102,9 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
           </h1>
         )}
 
-        {author && (
+        {authorName && (
           <span className="mt-1 flex-none text-base font-semibold tracking-tight text-gray-100 text-shadow-md">
-            By {author}
+            By {authorName}
           </span>
         )}
       </Layer>
@@ -106,6 +113,6 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
 }
 
 function SAMPLE<T>(array: T[]): T {
-  const index = new Date().getDate() % array.length
-  return array[index]
+  const index = new Date().getDate() % array.length;
+  return array[index];
 }

@@ -940,13 +940,14 @@
   resolved "https://registry.yarnpkg.com/@flayyer/goerr/-/goerr-1.2.0.tgz#ac49ccde7ef9cf15b083a3b8a9dfcc2b98036c35"
   integrity sha512-CvCxjtJiPyPLudiN8l1ax4lNJNhZmJ04XI0RidNCOMaT2e8zHp54KXYlOyAb0gbl80TTKhfhrTicgJeXm1tjsg==
 
-"@flayyer/variables@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@flayyer/variables/-/variables-1.1.2.tgz#4331a6347c7747789336313e5806d35dd2be6bbc"
-  integrity sha512-0rtJV1zdaROrE8Zhb/qyLOmCXO3uA2NYWot+xYXzFkSUyiAMHtEhR8wJRhxgWjc4v2VXHYj7xkpbuKmRkMnSOg==
+"@flayyer/variables@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@flayyer/variables/-/variables-1.2.0.tgz#395ade28d42bebc275dc28e54d2a5b956e60d31a"
+  integrity sha512-8CvPPPbgZ76LQPw8ENLRdL3+fOzHSzPYSacDMCbKIfXicspKAgw268/fMIaQmoUI2RBCuA5VkE8ezTkBYeu6Qg==
   dependencies:
     "@sinclair/typebox" "^0.16.5"
-    ajv "^8.1.0"
+    ajv "^8.2.0"
+    ajv-formats "^2.0.2"
 
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.3.0"
@@ -1375,6 +1376,13 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
+ajv-formats@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.0.2.tgz#69875cb99d76c74be46e9c7a4444bc232354eba0"
+  integrity sha512-Brah4Uo5/U8v76c6euTwtjVFFaVishwnJrQBYpev1JRh4vjA1F4HY3UzQez41YUCszUCXKagG8v6eVRBHV1gkw==
+  dependencies:
+    ajv "^8.0.0"
+
 ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
@@ -1385,7 +1393,7 @@ ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.0.1, ajv@^8.1.0:
+ajv@^8.0.0, ajv@^8.0.1, ajv@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.2.0.tgz#c89d3380a784ce81b2085f48811c4c101df4c602"
   integrity sha512-WSNGFuyWd//XO8n/m/EaOlNLtO0yL8EXT/74LqT4khdhpZjP7lkj/kT5uwRmGitKEVp/Oj7ZUHeGfPtgHhQ5CA==
