@@ -45,8 +45,6 @@ const validator = new Validator(schema);
 // Make sure to 'export default' a React component
 export default function MainTemplate(props: TemplateProps<Variables>) {
   const {width, height, variables, locale = 'en'} = props;
-  console.log(validator.parse(variables).errors);
-  
   if (!validator.validate(variables)) {
     return <img className="w-full h-full object-cover" src={img1} />; // Fallback for invalid variables
   }
