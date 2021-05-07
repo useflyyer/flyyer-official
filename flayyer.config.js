@@ -13,7 +13,7 @@ module.exports = config({
   description: 'Created with create-flayyer-app',
   homepage: 'https://flayyer.com',
   keywords: ['flayyer', 'react', 'tailwind'],
-  marketplace: true,
+  private: false,
   repository: 'https:/github.com/flayyer/flayyer-official',
   sizes: ['THUMBNAIL', 'BANNER', 'SQUARE', 'STORY']
 });
