@@ -2,6 +2,7 @@ import React from 'react';
 import {Variable as V, Validator, Static} from '@flayyer/variables';
 import {TemplateProps} from '@flayyer/flayyer-types';
 import inRange from 'lodash/inRange';
+import clsx from 'clsx';
 
 import '../styles/tailwind.css';
 
@@ -12,7 +13,6 @@ import img4 from '../static/img4.jpg';
 import img5 from '../static/img5.jpg';
 
 import {Layer} from '../components/layers';
-import clsx from 'clsx';
 
 /**
  * Export to enable variables UI on Flayyer.com
@@ -23,7 +23,7 @@ export const schema = V.Object({
   }),
   image: V.Optional(
     V.Image({
-      title: 'Background image URL',
+      title: 'Background image',
       default: img5,
       examples: [img5, img4, img3, img2, img1]
     })
@@ -43,7 +43,7 @@ type Variables = Static<typeof schema>;
 const validator = new Validator(schema);
 
 // Make sure to 'export default' a React component
-export default function MainTemplate(props: TemplateProps<Variables>) {
+export default function ArticleTemplate(props: TemplateProps<Variables>) {
   const {width, height, variables, locale = 'en'} = props;
   if (!validator.validate(variables)) {
     return <img className="w-full h-full object-cover" src={img1} />; // Fallback for invalid variables
