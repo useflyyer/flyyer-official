@@ -27,9 +27,24 @@ export const schema = V.Object({
       default: 'flayyer'
     })
   ),
-  image: V.Optional(
+  thumb: V.Optional(
     V.Image({
-      title: 'Profile image'
+      title: 'Thumbnail image'
+    })
+  ),
+  banner: V.Optional(
+    V.Image({
+      title: 'Banner image'
+    })
+  ),
+  sq: V.Optional(
+    V.Image({
+      title: 'Square image'
+    })
+  ),
+  story: V.Optional(
+    V.Image({
+      title: 'Story image'
     })
   ),
   command: V.Optional(
@@ -53,16 +68,25 @@ export default function TemplateTemplate(props: TemplateProps<Variables>) {
     // TODO
   }
 
-  const {title, description, command, image, authorUsername} = variables;
+  const {
+    title,
+    description,
+    command,
+    authorUsername,
+    thumb,
+    banner,
+    sq,
+    story
+  } = variables;
 
-  const thumbFlayyer =
-    'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=400&_h=400&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  const bannerFlayyer =
-    'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1200&_h=630&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  const sqFlayyer =
-    'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1080&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  const storyFlayyer =
-    'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1920&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
+  // Const thumb =
+  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=400&_h=400&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
+  // const banner =
+  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1200&_h=630&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
+  // const sq =
+  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1080&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
+  // const story =
+  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1920&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
 
   return (
     <Layer
@@ -79,7 +103,7 @@ export default function TemplateTemplate(props: TemplateProps<Variables>) {
         )}
       >
         <div className={clsx('block banner:hidden w-full h-full p-2')}>
-          <ImageRing className={clsx()} src={thumbFlayyer} />
+          <ImageRing className={clsx()} src={thumb || logo} />
         </div>
 
         <BarTop>Create images with JavaScript</BarTop>
@@ -92,21 +116,27 @@ export default function TemplateTemplate(props: TemplateProps<Variables>) {
           )}
         >
           <div className={clsx('flex-shrink-0')}>
-            <ImageRing
-              style={{width: width * 0.5, height: height * 0.5}}
-              className={clsx('hidden banner:block sq:hidden story:hidden')}
-              src={bannerFlayyer}
-            />
-            <ImageRing
-              style={{width: width * 0.45, height: height * 0.45}}
-              className={clsx('hidden banner:hidden sq:block story:hidden')}
-              src={sqFlayyer}
-            />
-            <ImageRing
-              style={{width: width * 0.4, height: height * 0.4}}
-              className={clsx('hidden banner:hidden sq:hidden story:block')}
-              src={storyFlayyer}
-            />
+            {banner && (
+              <ImageRing
+                style={{width: width * 0.5, height: height * 0.5}}
+                className={clsx('hidden banner:block sq:hidden story:hidden')}
+                src={banner}
+              />
+            )}
+            {sq && (
+              <ImageRing
+                style={{width: width * 0.45, height: height * 0.45}}
+                className={clsx('hidden banner:hidden sq:block story:hidden')}
+                src={sq}
+              />
+            )}
+            {story && (
+              <ImageRing
+                style={{width: width * 0.4, height: height * 0.4}}
+                className={clsx('hidden banner:hidden sq:hidden story:block')}
+                src={story}
+              />
+            )}
           </div>
 
           <header className="space-y-1 hidden banner:block">

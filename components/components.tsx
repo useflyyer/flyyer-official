@@ -46,7 +46,7 @@ export function ImageRing({className, ...props}: React.ComponentProps<'img'>) {
     <img
       className={clsx(
         // 'hidden banner:hidden sq:hidden story:hidden',
-        'rounded-md shadow-lg ring-2 ring-offset-2 ring-gray-300',
+        'rounded-md shadow-lg ring-2 ring-offset-2 ring-gray-300 object-cover',
         className
       )}
       {...props}
