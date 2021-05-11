@@ -87,6 +87,31 @@ module.exports = {
       story: {raw: '(min-height: 1920px)'},
       /* Keep default Tailwind sizes (https://tailwindcss.com/docs/breakpoints#extending-the-default-breakpoints) */
       ...defaultTheme.screens
+    },
+    aspectRatio: {
+      1: '1',
+      2: '2',
+      3: '3',
+      4: '4',
+      5: '5',
+      6: '6',
+      7: '7',
+      8: '8',
+      9: '9',
+      10: '10',
+      11: '11',
+      12: '12',
+      13: '13',
+      14: '14',
+      15: '15',
+      16: '16',
+      17: '17',
+      18: '18',
+      19: '19',
+      630: '630',
+      1080: '1080',
+      1200: '1200',
+      1920: '1920'
     }
   },
   variants: {
@@ -100,7 +125,7 @@ module.exports = {
   plugins: [
     /* Some useful plugins: */
     require('@tailwindcss/line-clamp'),
-    // Require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-textshadow')
   ]
 };
