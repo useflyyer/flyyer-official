@@ -18,7 +18,7 @@ export const schema = V.Object({
   }),
   description: V.Optional(
     V.String({
-      examples: ['Created with create-flayyer-app']
+      default: 'Created with create-flayyer-app'
     })
   ),
   authorUsername: V.Optional(
@@ -29,22 +29,34 @@ export const schema = V.Object({
   ),
   thumb: V.Optional(
     V.Image({
-      title: 'Thumbnail image'
+      title: 'Thumbnail image',
+      examples: [
+        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=400&_h=400&_ua=&image=%2Falternative.a1d20d64.jpeg'
+      ]
     })
   ),
   banner: V.Optional(
     V.Image({
-      title: 'Banner image'
+      title: 'Banner image',
+      examples: [
+        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1200&_h=630&_ua=&image=%2Falternative.a1d20d64.jpeg'
+      ]
     })
   ),
   sq: V.Optional(
     V.Image({
-      title: 'Square image'
+      title: 'Square image',
+      examples: [
+        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1080&_ua=&image=%2Falternative.a1d20d64.jpeg'
+      ]
     })
   ),
   story: V.Optional(
     V.Image({
-      title: 'Story image'
+      title: 'Story image',
+      examples: [
+        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1920&_ua=&image=%2Falternative.a1d20d64.jpeg'
+      ]
     })
   ),
   command: V.Optional(
@@ -78,15 +90,6 @@ export default function TemplateTemplate(props: TemplateProps<Variables>) {
     sq,
     story
   } = variables;
-
-  // Const thumb =
-  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=400&_h=400&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  // const banner =
-  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1200&_h=630&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  // const sq =
-  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1080&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
-  // const story =
-  //   'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1920&_ua=&_loc=es&image=%2Falternative.a1d20d64.jpeg';
 
   return (
     <Layer

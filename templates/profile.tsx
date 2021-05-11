@@ -25,12 +25,14 @@ export const schema = V.Object({
   ),
   url: V.Optional(
     V.URL({
-      description: 'Profile URL'
+      description: 'Profile URL',
+      examples: ['https://flayyer.com/@/flayyer']
     })
   ),
   image: V.Optional(
     V.Image({
-      title: 'Profile image'
+      title: 'Profile image',
+      examples: ['https//flayyer.com/logo.png']
     })
   ),
   command: V.Optional(
