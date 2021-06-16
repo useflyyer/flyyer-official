@@ -32,7 +32,7 @@ export const schema = V.Object({
   image: V.Optional(
     V.Image({
       title: 'Profile image',
-      examples: ['https//flayyer.com/logo.png']
+      examples: ['https://flayyer.com/logo.png']
     })
   ),
   command: V.Optional(
