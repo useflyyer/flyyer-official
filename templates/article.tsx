@@ -1,6 +1,6 @@
 import React from 'react';
-import {Variable as V, Validator, Static} from '@flayyer/variables';
-import {TemplateProps} from '@flayyer/flayyer-types';
+import {Variable as V, Validator, Static} from '@flyyer/variables';
+import {TemplateProps} from '@flyyer/types';
 import inRange from 'lodash/inRange';
 import clsx from 'clsx';
 
@@ -15,11 +15,11 @@ import img5 from '../static/img5.jpg';
 import {Layer} from '../components/layers';
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on flyyer.io
  */
 export const schema = V.Object({
   title: V.String({
-    default: 'Flayyer blog entry'
+    default: 'Flyyer blog entry'
   }),
   image: V.Optional(
     V.Image({

@@ -1,24 +1,24 @@
 {
-  "name": "@flayyer/official",
+  "name": "@flyyer/official",
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "start": "flayyer start",
-    "build": "flayyer build",
-    "deploy": "flayyer deploy",
+    "start": "flyyer start",
+    "build": "flyyer build",
+    "deploy": "flyyer deploy",
     "format": "xo --fix"
   },
   "dependencies": {
-    "@flayyer/better-url": "^0.3.5",
-    "@flayyer/flayyer-types": "^1.11.2",
-    "@flayyer/variables": "^1.4.1",
+    "@flyyer/better-url": "^2.0.0",
+    "@flyyer/types": "^2.0.0",
+    "@flyyer/variables": "^2.0.0",
     "clsx": "^1.1.1",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@flayyer/cli": "^1.18.1",
+    "@flyyer/cli": "^2.0.0",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/line-clamp": "^0.2.1",

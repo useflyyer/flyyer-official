@@ -1,6 +1,6 @@
 import React from 'react';
-import {Variable as V, Validator, Static} from '@flayyer/variables';
-import {TemplateProps} from '@flayyer/flayyer-types';
+import {Variable as V, Validator, Static} from '@flyyer/variables';
+import {TemplateProps} from '@flyyer/types';
 import clsx from 'clsx';
 
 import '../styles/tailwind.css';
@@ -10,28 +10,28 @@ import {Layer} from '../components/layers';
 import {ImageRing, BarTop, BarBottom} from '../components/components';
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on flyyer.io
  */
 export const schema = V.Object({
   title: V.String({
-    default: 'Flayyer Template'
+    default: 'Flyyer Template'
   }),
   description: V.Optional(
     V.String({
-      default: 'Created with create-flayyer-app'
+      default: 'Created with create-flyyer-app'
     })
   ),
   authorUsername: V.Optional(
     V.String({
       description: 'Author username',
-      default: 'flayyer'
+      default: 'flyyer'
     })
   ),
   thumb: V.Optional(
     V.Image({
       title: 'Thumbnail image',
       examples: [
-        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=400&_h=400&_ua=&image=%2Falternative.a1d20d64.jpeg'
+        'https://flyyer.io/v2/flyyer/default/main.jpeg?_w=400&_h=400&_ua=&image=%2Falternative.a1d20d64.jpeg'
       ]
     })
   ),
@@ -39,7 +39,7 @@ export const schema = V.Object({
     V.Image({
       title: 'Banner image',
       examples: [
-        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1200&_h=630&_ua=&image=%2Falternative.a1d20d64.jpeg'
+        'https://flyyer.io/v2/flyyer/default/main.jpeg?_w=1200&_h=630&_ua=&image=%2Falternative.a1d20d64.jpeg'
       ]
     })
   ),
@@ -47,7 +47,7 @@ export const schema = V.Object({
     V.Image({
       title: 'Square image',
       examples: [
-        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1080&_ua=&image=%2Falternative.a1d20d64.jpeg'
+        'https://flyyer.io/v2/flyyer/default/main.jpeg?_w=1080&_h=1080&_ua=&image=%2Falternative.a1d20d64.jpeg'
       ]
     })
   ),
@@ -55,16 +55,16 @@ export const schema = V.Object({
     V.Image({
       title: 'Story image',
       examples: [
-        'https://flayyer.io/v2/flayyer/default/main.jpeg?_w=1080&_h=1920&_ua=&image=%2Falternative.a1d20d64.jpeg'
+        'https://flyyer.io/v2/flyyer/default/main.jpeg?_w=1080&_h=1920&_ua=&image=%2Falternative.a1d20d64.jpeg'
       ]
     })
   ),
   command: V.Optional(
     V.String({
-      default: '$ npm create flayyer-app',
+      default: '$ npm create flyyer-app',
       examples: [
-        '$ yarn create flayyer-app',
-        '$ npm create flayyer-app@latest'
+        '$ yarn create flyyer-app',
+        '$ npm create flyyer-app@latest'
       ],
       description: 'Bottom text in monospace'
     })

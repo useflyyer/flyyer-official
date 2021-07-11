@@ -1,7 +1,7 @@
 import React from 'react';
-import {BetterURL} from '@flayyer/better-url';
-import {Variable as V, Validator, Static} from '@flayyer/variables';
-import {TemplateProps} from '@flayyer/flayyer-types';
+import {BetterURL} from '@flyyer/better-url';
+import {Variable as V, Validator, Static} from '@flyyer/variables';
+import {TemplateProps} from '@flyyer/types';
 import clsx from 'clsx';
 
 import '../styles/tailwind.css';
@@ -12,35 +12,35 @@ import {Layer} from '../components/layers';
 import {ImageRing, BarTop, BarBottom} from '../components/components';
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on flyyer.io
  */
 export const schema = V.Object({
   title: V.String({
-    default: 'flayyer'
+    default: 'flyyer'
   }),
   description: V.Optional(
     V.String({
-      examples: ['Official Flayyer.com profile on Flayyer.com']
+      examples: ['Official flyyer.io profile on flyyer.io']
     })
   ),
   url: V.Optional(
     V.URL({
       description: 'Profile URL',
-      examples: ['https://flayyer.com/@/flayyer']
+      examples: ['https://flyyer.io/@/flyyer']
     })
   ),
   image: V.Optional(
     V.Image({
       title: 'Profile image',
-      examples: ['https://flayyer.com/logo.png']
+      examples: ['https://flyyer.io/logo.png']
     })
   ),
   command: V.Optional(
     V.String({
-      default: '$ npm create flayyer-app',
+      default: '$ npm create flyyer-app',
       examples: [
-        '$ yarn create flayyer-app',
-        '$ npm create flayyer-app@latest'
+        '$ yarn create flyyer-app',
+        '$ npm create flyyer-app@latest'
       ],
       description: 'Bottom text in monospace'
     })

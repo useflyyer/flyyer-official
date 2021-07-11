@@ -1,7 +1,7 @@
 import React from 'react';
-import {Variable as V, Validator, Static} from '@flayyer/variables';
-import {TemplateProps} from '@flayyer/flayyer-types';
-import {BetterURL} from '@flayyer/better-url';
+import {Variable as V, Validator, Static} from '@flyyer/variables';
+import {TemplateProps} from '@flyyer/types';
+import {BetterURL} from '@flyyer/better-url';
 import inRange from 'lodash/inRange';
 import clsx from 'clsx';
 
@@ -11,14 +11,14 @@ import bubbles from '../static/bubbles.svg';
 import {Layer} from '../components/layers';
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on flyyer.io
  */
 export const schema = V.Object({
   url: V.Optional(
     V.URL({
       description: 'Page URL',
-      default: 'https://flayyer.com/',
-      examples: ['https://flayyer.com/about']
+      default: 'https://flyyer.io/',
+      examples: ['https://flyyer.io/about']
     })
   )
 });
