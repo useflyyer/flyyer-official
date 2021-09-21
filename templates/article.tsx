@@ -1,6 +1,7 @@
 import React from 'react';
 import {Variable as V, Validator, Static} from '@flyyer/variables';
 import {TemplateProps} from '@flyyer/types';
+import {proxy} from '@flyyer/proxy';
 import inRange from 'lodash/inRange';
 import clsx from 'clsx';
 
@@ -65,7 +66,7 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
       <Layer className="bg-white p-2 sq:p-4">
         <img
           className="w-full h-full object-cover rounded-md filter drop-shadow-2xl contrast-75 brightness-90"
-          src={image}
+          src={proxy(image)}
         />
       </Layer>
       <Layer
