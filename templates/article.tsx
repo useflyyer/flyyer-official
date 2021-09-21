@@ -19,24 +19,24 @@ import {Layer} from '../components/layers';
  */
 export const schema = V.Object({
   title: V.String({
-    default: 'Flyyer blog entry'
+    default: 'Flyyer blog entry',
   }),
   image: V.Optional(
     V.Image({
       title: 'Background image',
       default: img5,
-      examples: [img5, img4, img3, img2, img1]
-    })
+      examples: [img5, img4, img3, img2, img1],
+    }),
   ),
   date: V.Optional(
     V.DateTime({
       description: 'Publication date',
-      examples: [new Date().toISOString()]
-    })
+      examples: [new Date().toISOString()],
+    }),
   ),
   authorName: V.Optional(
-    V.String({title: 'Author name', examples: ['Patricio Lopez J.']})
-  )
+    V.String({title: 'Author name', examples: ['Patricio Lopez J.']}),
+  ),
 });
 type Variables = Static<typeof schema>;
 
@@ -57,7 +57,7 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
   const formatter = new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   });
 
   return (
@@ -71,7 +71,7 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
       <Layer
         className={clsx([
           'hidden',
-          'banner:flex flex-col items-center justify-center p-8 flex-nowrap text-center'
+          'banner:flex flex-col items-center justify-center p-8 flex-nowrap text-center',
         ])}
       >
         {date && (
@@ -94,9 +94,9 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
                 'text-lg sq:text-xl': inRange(
                   title.length,
                   120,
-                  Number.POSITIVE_INFINITY
-                )
-              }
+                  Number.POSITIVE_INFINITY,
+                ),
+              },
             ])}
           >
             {title}

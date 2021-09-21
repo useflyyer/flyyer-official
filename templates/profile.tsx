@@ -16,35 +16,32 @@ import {ImageRing, BarTop, BarBottom} from '../components/components';
  */
 export const schema = V.Object({
   title: V.String({
-    default: 'flyyer'
+    default: 'flyyer',
   }),
   description: V.Optional(
     V.String({
-      examples: ['Official flyyer.io profile on flyyer.io']
-    })
+      examples: ['Official flyyer.io profile on flyyer.io'],
+    }),
   ),
   url: V.Optional(
     V.URL({
       description: 'Profile URL',
-      examples: ['https://flyyer.io/@/flyyer']
-    })
+      examples: ['https://flyyer.io/@/flyyer'],
+    }),
   ),
   image: V.Optional(
     V.Image({
       title: 'Profile image',
-      examples: ['https://flyyer.io/logo.png']
-    })
+      examples: ['https://flyyer.io/logo.png'],
+    }),
   ),
   command: V.Optional(
     V.String({
       default: '$ npm create flyyer-app',
-      examples: [
-        '$ yarn create flyyer-app',
-        '$ npm create flyyer-app@latest'
-      ],
-      description: 'Bottom text in monospace'
-    })
-  )
+      examples: ['$ yarn create flyyer-app', '$ npm create flyyer-app@latest'],
+      description: 'Bottom text in monospace',
+    }),
+  ),
 });
 type Variables = Static<typeof schema>;
 
@@ -64,7 +61,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
   return (
     <Layer
       className={clsx({
-        dark: false /* TODO: Think about "dark-mode" variable */
+        dark: false /* TODO: Think about "dark-mode" variable */,
       })}
     >
       <Layer
@@ -72,7 +69,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
           'antialiased overflow-hidden',
           'bg-gray-50 dark:bg-gray-900',
           'story:py-storysafe',
-          'flex flex-col items-center justify-center'
+          'flex flex-col items-center justify-center',
         )}
       >
         <BarTop>Create images with JavaScript</BarTop>
@@ -80,7 +77,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
           className={clsx(
             'banner:px-8 sq:px-10 sq:pt-10',
             'flex-1',
-            'flex flex-row space-x-4 space-y-0 sq:space-x-0 sq:space-y-2 sq:flex-col items-center sq:items-start justify-center sq:justify-start'
+            'flex flex-row space-x-4 space-y-0 sq:space-x-0 sq:space-y-2 sq:flex-col items-center sq:items-start justify-center sq:justify-start',
           )}
         >
           {image ? (
@@ -98,7 +95,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
             <h1
               className={clsx(
                 'font-extrabold tracking-tight leading-tight text-2xl sq:text-3xl text-gray-900 dark:text-white',
-                'line-clamp-1 story:line-clamp-none'
+                'line-clamp-1 story:line-clamp-none',
               )}
             >
               {title}
@@ -107,7 +104,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
               className={clsx(
                 'text-font-semibold text-base story:text-lg leading-tight story:leading-tight',
                 'text-gray-700 dark:text-gray-400',
-                'line-clamp-3 story:line-clamp-none'
+                'line-clamp-3 story:line-clamp-none',
               )}
             >
               {description}
@@ -116,7 +113,7 @@ export default function ProfileTemplate(props: TemplateProps<Variables>) {
               <p
                 className={clsx(
                   'text-xs story:text-sm leading-none',
-                  'text-gray-600 dark:text-gray-500'
+                  'text-gray-600 dark:text-gray-500',
                 )}
               >
                 {betterURL.format({hostname: true, pathname: true})}

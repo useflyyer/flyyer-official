@@ -18,9 +18,9 @@ export const schema = V.Object({
     V.URL({
       description: 'Page URL',
       default: 'https://flyyer.io/',
-      examples: ['https://flyyer.io/about']
-    })
-  )
+      examples: ['https://flyyer.io/about'],
+    }),
+  ),
 });
 type Variables = Static<typeof schema>;
 
@@ -46,13 +46,13 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
       <Layer
         className={clsx([
           'hidden',
-          'banner:flex flex-col items-center justify-center p-8 flex-nowrap text-center'
+          'banner:flex flex-col items-center justify-center p-8 flex-nowrap text-center',
         ])}
       >
         {host && path && (
           <h1
             className={clsx(
-              'text-4xl font-bold leading-tighter tracking-tight text-gray-800 text-shadow-md'
+              'text-4xl font-bold leading-tighter tracking-tight text-gray-800 text-shadow-md',
             )}
           >
             <span className={clsx('mr-0.5')}>{host}</span>
@@ -63,7 +63,7 @@ export default function ArticleTemplate(props: TemplateProps<Variables>) {
                 'text-5xl': inRange(path.length, 0, 8),
                 'text-4xl': inRange(path.length, 8, 16),
                 'text-3xl': inRange(path.length, 16, 32),
-                'text-2xl': inRange(path.length, 64, Number.POSITIVE_INFINITY)
+                'text-2xl': inRange(path.length, 64, Number.POSITIVE_INFINITY),
               })}
             >
               {path}

@@ -1,5 +1,6 @@
 // Created with create-flyyer-app@1.17.0
 
+const process = require('process');
 const {config} = require('@flyyer/types');
 require('dotenv').config();
 
@@ -15,5 +16,5 @@ module.exports = config({
   keywords: ['flyyer', 'react', 'tailwind'],
   private: false,
   repository: 'https:/github.com/useflyyer/flyyer-official',
-  sizes: ['THUMBNAIL', 'BANNER', 'SQUARE', 'STORY']
+  sizes: ['THUMBNAIL', 'BANNER', 'SQUARE', 'STORY'],
 });
